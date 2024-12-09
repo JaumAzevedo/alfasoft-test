@@ -1,19 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Contact Details</h1>
-    <ul>
-        <li><strong>ID:</strong> {{ $contact->id }}</li>
-        <li><strong>Name:</strong> {{ $contact->name }}</li>
-        <li><strong>Contact:</strong> {{ $contact->contact }}</li>
-        <li><strong>Email:</strong> {{ $contact->email }}</li>
-    </ul>
-    <a href="{{ route('contacts.edit', $contact) }}" class="btn btn-warning">Edit</a>
-    <form action="{{ route('contacts.destroy', $contact) }}" method="POST" style="display: inline;">
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-    </form>
+<div class="container mx-auto py-8">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{{ $item->image }}" alt="{{ $item->name }}" class="w-full h-64 object-cover">
+        <div class="p-6">
+            <h1 class="text-3xl font-semibold text-gray-900">{{ $item->name }}</h1>
+            <p class="text-gray-700 mt-4">{{ $item->description }}</p>
+            <a href="{{ route('item.index') }}" class="mt-6 inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700">Back to All Items</a>
+        </div>
+    </div>
 </div>
 @endsection
