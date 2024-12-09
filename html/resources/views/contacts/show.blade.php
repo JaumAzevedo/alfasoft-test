@@ -2,13 +2,14 @@
 
 @section('content')
 <div class="container mx-auto py-8">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="{{ $item->image }}" alt="{{ $item->name }}" class="w-full h-64 object-cover">
-        <div class="p-6">
-            <h1 class="text-3xl font-semibold text-gray-900">{{ $item->name }}</h1>
-            <p class="text-gray-700 mt-4">{{ $item->description }}</p>
-            <a href="{{ route('item.index') }}" class="mt-6 inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700">Back to All Items</a>
-        </div>
+    <h1 class="text-3xl font-bold mb-6">Contact Details</h1>
+    <div class="bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900">Name: {{ $contact->name }}</h2>
+        <p class="text-gray-600">Contact: {{ $contact->contact }}</p>
+        <p class="text-gray-600">Email: {{ $contact->email }}</p>
+    </div>
+    <div class="mt-4">
+        <a href="{{ route('contacts.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded">Back to Contacts</a>
     </div>
 </div>
 @endsection

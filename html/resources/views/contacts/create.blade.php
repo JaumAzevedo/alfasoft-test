@@ -2,35 +2,22 @@
 
 @section('content')
 <div class="container mx-auto py-8">
-    <h1 class="text-3xl font-bold mb-6">Create New Item</h1>
-
-    <form action="{{ route('item.store') }}" method="POST" class="bg-white shadow-md p-8 rounded-lg">
+    <h1 class="text-3xl font-bold mb-6">Add New Contact</h1>
+    <form action="{{ route('contacts.store') }}" method="POST">
         @csrf
         <div class="mb-4">
-            <label for="name" class="block text-sm font-semibold text-gray-700">Name</label>
-            <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" required>
-            @error('name')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
+            <label for="name" class="block text-gray-700">Name</label>
+            <input type="text" name="name" id="name" class="w-full p-2 border rounded" required>
         </div>
-
         <div class="mb-4">
-            <label for="description" class="block text-sm font-semibold text-gray-700">Description</label>
-            <textarea id="description" name="description" rows="4" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" required>{{ old('description') }}</textarea>
-            @error('description')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
+            <label for="contact" class="block text-gray-700">Contact</label>
+            <input type="text" name="contact" id="contact" class="w-full p-2 border rounded" required>
         </div>
-
         <div class="mb-4">
-            <label for="image" class="block text-sm font-semibold text-gray-700">Image URL</label>
-            <input type="text" id="image" name="image" value="{{ old('image') }}" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
-            @error('image')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
+            <label for="email" class="block text-gray-700">Email</label>
+            <input type="email" name="email" id="email" class="w-full p-2 border rounded" required>
         </div>
-
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700">Create Item</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Add Contact</button>
     </form>
 </div>
 @endsection
